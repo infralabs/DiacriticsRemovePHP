@@ -366,8 +366,8 @@ $defaultDiacriticsRemovalMap = array(
 function removeDiacritics($str) {
 	global $defaultDiacriticsRemovalMap;
 	$flags = "um";
-    for ($i = 0; $i < sizeof($defaultDiacriticsRemovalMap); $i++) {
-        $str = preg_replace($defaultDiacriticsRemovalMap[$i]['letters'].$flags, $defaultDiacriticsRemovalMap[$i]['base'], $str);
+    foreach ($defaultDiacriticsRemovalMap as $iValue) {
+        $str = preg_replace($iValue['letters'].$flags, $iValue['base'], $str);
     }
     return $str;
 }
